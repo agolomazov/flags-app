@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { IoArrowBack } from "react-icons/io5";
 import { useParams, useHistory } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { Info } from '../components/Info';
 import { searchByCountry } from '../config';
 
 
@@ -31,7 +32,7 @@ export const DetailsPage = () => {
       <Button onClick={goBack}>
         <IoArrowBack /> Back
       </Button>
-      <h1>Details Page - {countryName}</h1>
+      {country && <Info {...country} push={push} />}
     </div>
   );
 }

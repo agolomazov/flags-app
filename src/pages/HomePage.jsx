@@ -47,6 +47,8 @@ export const HomePage = ({ countries, setCountries }) => {
     <>
       <Controls onSearch={handleSearch} />
       <List>
+        { countries.length === 0 && <p>Loading country list...</p> }
+        { countries.length > 0 && filteredContries.length === 0 && <p>Not found country</p> }
         {filteredContries.map((country) => {
           const countryInfo = {
             img: country.flags.png,
